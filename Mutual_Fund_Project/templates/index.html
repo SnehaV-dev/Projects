@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>MF Project</title>
+    <meta charset="utf-8">
+    <meta name="viewport" 
+          content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" 
+          href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
+    <script src=
+"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js">
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    Mutual Fund Calculation</a>
+            </div>
+            
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="{{url_for('signup')}}">
+                        <span class="glyphicon glyphicon-user"></span>
+                        SignUp</a></li>
+                <li><a href="{{url_for('login')}}">
+                        <span class="glyphicon glyphicon-log-in"></span>
+                        Login</a></li>
+                <li><a href="{{url_for('insert')}}">
+                        <span class="glyphicon glyphicon-log-in"></span>
+                        Insert</a></li>
+                <li><a href="{{url_for('logout')}}">
+                        <span class="glyphicon glyphicon-log-in"></span>
+                        Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+    <table class="table table-bordered">
+        <tr>
+            <th>S.NO</th>
+            <th>Name</th>
+            <th>Invested_amt</th>
+            <th>Units_held</th>
+            <th>Invested_amt</th>
+            <th>Fund_name</th>
+            <th>Nav</th>
+            <th>Current value</th>
+            <th>Profit</th>   
+            <th colspan="2">Action</th>
+        </tr>
+        
+        {% for i in mf %}
+        <tr>
+            <td>{{loop.index}}</td>
+            <td>{{i[1]}}</td>
+            <td>{{i[2]}}</td>
+            <td>{{i[3]}}</td>
+            <td>{{i[4]}}</td>
+            <td>{{i[5]}}</td>
+            <td>{{i[6]}}</td>
+            <td>{{i[7]}}</td>
+            <td>{{i[8]}}</td>
+            <td><a href="{{url_for('edit',id=i[0])}}">Edit</a></td>
+            <td><a href="{{url_for('delete',id=i[0])}}">Del</a></td>
+           
+            
+        </tr>
+        {% endfor %}
+    </table>
+
+    
+</body>
+</html>

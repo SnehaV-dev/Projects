@@ -1,0 +1,201 @@
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ecommerce Product View Design</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .product-view .product-name{
+    font-size: 24px;
+    color: #2874f0;
+}
+.product-view .product-name .label-stock{
+
+    font-size: 13px;
+    padding: 4px 13px;
+    border-radius: 5px;
+    color: #fff;
+    box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%);
+    float: right;
+}
+.product-view .product-path{
+    font-size: 13px;
+    font-weight: 500;
+    color: #252525;
+    margin-bottom: 16px;
+}
+.product-view .selling-price{
+    font-size: 26px;
+    color: #000;
+    font-weight: 600;
+    margin-right: 8px;
+}
+.product-view .original-price{
+
+    font-size: 18px;
+    color: #937979;
+    font-weight: 400;
+    text-decoration: line-through;
+}
+.product-view .btn1{
+    border: 1px solid;
+    margin-right: 3px;
+    border-radius: 0px;
+    font-size: 14px;
+    margin-top: 10px;
+}
+.product-view .btn1:hover{
+    background-color: #2874f0;
+    color: #fff;
+}
+.product-view .input-quantity{
+    border: 1px solid #000;
+    margin-right: 3px;
+    font-size: 12px;
+    margin-top: 10px;
+    width: 58px;
+    outline: none;
+    text-align: center;
+}
+/* Product View */
+.main-navbar{
+          border-bottom: 1px solid #ccc;
+      }
+      .main-navbar .top-navbar{
+          background-color: #2874f0;
+      
+          padding-top: 10px;
+          padding-bottom: 10px;
+      }
+      .main-navbar .top-navbar .brand-name{
+          color: #fff;
+      }
+      .main-navbar .top-navbar .nav-link{
+          color: #fff;
+          font-size: 16px;
+          font-weight: 500;
+      }
+      .main-navbar .top-navbar .dropdown-menu{
+          padding: 0px 0px;
+          border-radius: 0px;
+      }
+      .main-navbar .top-navbar .dropdown-menu .dropdown-item{
+          padding: 8px 16px;
+          border-bottom: 1px solid #ccc;
+          font-size: 14px;
+      }
+      .main-navbar .top-navbar .dropdown-menu .dropdown-item i{
+          width: 20px;
+          text-align: center;
+          color: #2874f0;
+          font-size: 14px;
+      }
+      .main-navbar .navbar{
+          padding: 0px;
+          background-color: #ddd;
+      }
+      .main-navbar .navbar .nav-item .nav-link{
+          padding: 8px 20px;
+          color: #000;
+          font-size: 15px;
+      }
+    </style>
+</head>
+<body>
+    <div class="main-navbar shadow-sm sticky-top">
+        <div class="top-navbar">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-2 my-auto d-none d-sm-none d-md-block d-lg-block">
+                        <h5 class="brand-name">Shopping App</h5>
+                    </div>
+                    <div class="col-md-5 my-auto">
+                        <form role="search">
+                            <div class="input-group">
+                                <input type="search" placeholder="Search your product" class="form-control" />
+  
+                                <button class="btn bg-white" type="submit">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-5 my-auto">
+                        <ul class="nav justify-content-end">
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="fa fa-shopping-cart"></i> Cart
+                                </a>
+                            </li>
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="fa fa-user"></i> Logout
+                                </a>
+                            </li>
+  
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa fa-user"></i> {{session['username']}}
+                                </a>
+                                
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <div class="py-3 py-md-5 bg-light">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 mt-3">
+                    <div class="bg-white border">
+                        <img src="/static/images/productview.jpeg" class="w-100" alt="Img">
+                    </div>
+                </div>
+                <div class="col-md-7 mt-3">
+                    <div class="product-view">
+                        <h4 class="product-name">
+                            HP Laptop 15IQasd54
+                            
+                        </h4>
+                        <hr>
+                        
+                        <div>
+                            <span class="selling-price">RS.39999</span>
+
+                            
+                        </div>
+                        <div class="mt-2">
+                            <div class="input-group">
+                                <span class="btn btn1"><i class="fa fa-minus"></i></span>
+                                <input type="text" value="1" class="input-quantity" />
+                                <span class="btn btn1"><i class="fa fa-plus"></i></span>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <a href="{{url_for('cart')}}" class="btn btn1"> <i class="fa fa-shopping-cart"></i> Add To Cart</a>
+                            <a href="" class="btn btn1"> <i class="fa fa-heart"></i> Add To Wishlist </a>
+                        </div>
+                        <div class="mt-3">
+                            <h5 class="mb-0">About this item</h5>
+                            <p>
+                                Processor: Intel Core i5-1235U(up to 4.4 GHz with Intel Turbo Boost Technology(2g), 12 MB L3 cache, 10 cores, 12 threads)|Memory:8 GB DDR4-3200 MHz RAM (2 x 4 GB), Upto 16 GB DDR4-3200 MHz RAM (2 x 8 GB)| Storage: 512 GB PCIe NVMe M.2 SSD
+Display & Graphics : 39.6 cm (15.6") diagonal, FHD, micro-edge, anti-glare, UWVA, 250 nits, 141 ppi, 45%NTSC, Screen Resolution: 1920 x 1080|Graphics: Intel Iris Xe Graphics
+Operating System & Preinstalled Software: Windows 11 Home 64 Plus Single Language | Microsoft Office Home & Student 2021| McAfee LiveSafe (30 days free trial as default) |Pre-installed Alexa built-in- Your life simplified with Alexa. Just ask Alexa to check your calendar, create to-do lists, shopping lists, play music, set reminders, get latest news and control smart home.
+                            </p>
+                        </div>
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    

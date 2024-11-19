@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends "base.html" %}
+
+        {% block content %}
+
+        
+    <table class="table table-striped">
+        <tr>
+            <th>S.NO</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Year_of_joining</th>
+            <th>Department</th>
+            <th>Email</th>
+            <th colspan="2">Action</th>
+        </tr>
+        {% for i in std %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.age}}</td>
+            <td>{{i.year_of_joining}}</td>
+            <td>{{i.depart}}</td>
+            <td>{{i.email}}</td>
+            <td><a href="edit/{{i.id}}">Edit</a></td>
+            <td><a href="delete/{{i.id}}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endblock %}
+</body>
+</html>

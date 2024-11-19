@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+        {% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" name="name" value="{{data.name}}" placeholder="Enter name"><br><br>
+
+
+        <label for="age">Age:</label>
+        <input type="text" name="age" value="{{data.age}}" placeholder="Enter age"><br><br>
+
+        <label for="year_of_joining">year_of_joining:</label>
+        <input type="text" name="year_of_joining" value="{{data.year_of_joining}}" placeholder="Enter year of joining"><br><br>
+
+
+        <label for="depart">Department:</label>
+        <input type="text" name="depart" value="{{data.depart}}" placeholder="Enter your dept"><br><br>
+
+        <label for="mail">Email:</label>
+        <input type="text" name="mail" value="{{data.email}}" placeholder="Enter mail">
+
+        
+
+        <input type="submit" value="submit">
+    </form>
+
+
+{% endblock %}
+

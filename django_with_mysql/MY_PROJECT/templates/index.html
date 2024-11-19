@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+        {% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" name="name" placeholder="Enter name"><br><br>
+
+
+        <label for="age">Age:</label>
+        <input type="text" name="age" placeholder="Enter age"><br><br>
+
+        <label for="year_of_joining">year_of_joining:</label>
+        <input type="text" name="year_of_joining" placeholder="Enter year of joining"><br><br>
+
+
+        <label for="depart">Department:</label>
+        <input type="text" name="depart" placeholder="Enter your dept"><br><br>
+
+        <label for="mail">Email:</label>
+        <input type="text" name="mail" placeholder="Enter mail">
+
+        
+
+        <input type="submit" value="submit">
+    </form>
+
+
+{% endblock %}
